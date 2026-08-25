@@ -1,32 +1,33 @@
-% Description du projet ESC Brushless (My-ESC-Project)
+# My-ESC-Project 🚀
 
-% --- Faits : Spécifications techniques ---
-microcontroleur('STM32').
-type_moteur('Brushless triphasé (BLDC)').
-controle_vitesse('Régulation par PWM (rapport cyclique variable)').
-commutation('120° via STM32 + Drivers IR2101').
-etage_puissance('6 MOSFETs N-Channel').
-largeur_pistes('1.5mm pour courant fort').
-outil_conception('KiCad 9.0').
+Contrôleur de vitesse électronique (ESC) open-source pour moteur brushless triphasé, conçu sur mesure avec KiCad et piloté par un microcontrôleur STM32.
 
-% --- Faits : Structure du dépôt ---
-fichier_projet('Electronic Speed Controller.kicad_sch', 'Saisie schématique').
-fichier_projet('Electronic Speed Controller.kicad_pcb', 'Routage du circuit imprimé').
-fichier_projet('Electronic Speed Controller.kicad_pro', 'Fichier projet KiCad').
-dossier('Images', 'Captures et schémas visuels').
+---
 
-% --- Règles : Requêtes d'information sur le projet ---
+## 📌 Aperçu du projet
 
-% Permet de lister toutes les spécifications du système
-specification(Composant) :-
-    microcontroleur(Composant);
-    type_moteur(Composant);
-    controle_vitesse(Composant);
-    commutation(Composant);
-    etage_puissance(Composant);
-    largeur_pistes(Composant);
-    outil_conception(Composant).
+Ce projet consiste en la conception complète (schématique, routage PCB et logique de commande) d'un ESC (Electronic Speed Controller) adapté aux moteurs synchrones triphasés (BLDC). Il est dimensionné pour supporter des courants forts et implémente une commutation adaptée au pilotage de moteurs de forte puissance.
 
-% Permet de vérifier si un fichier appartient au projet KiCad
-est_element_kicad(Fichier) :-
-    fichier_projet(Fichier, _).
+---
+
+## ⚙️ Spécifications techniques
+
+* **Microcontrôleur :** STM32
+* **Type de moteur :** Moteur brushless triphasé (BLDC)
+* **Contrôle de vitesse :** Régulation par PWM (rapport cyclique variable)
+* **Commutation :** Commutation 120° via STM32 + Drivers de MOSFET IR2101
+* **Étage de puissance :** 6 MOSFETs N-Channel
+* **Conception PCB :** Pistes de **1.5 mm** optimisées pour le passage de courants forts
+* **Outil de conception :** KiCad 9.0
+
+---
+
+## 📂 Structure du dépôt
+
+```text
+My-ESC-Project/
+├── Images/                               # Captures et schémas visuels du projet
+├── Electronic Speed Controller.kicad_sch # Schématique électronique (KiCad)
+├── Electronic Speed Controller.kicad_pcb # Routage du circuit imprimé (KiCad)
+├── Electronic Speed Controller.kicad_pro # Fichier projet KiCad
+└── README.md                             # Documentation du projet
